@@ -33,6 +33,6 @@ jobs:
       run: mvn clean install
 
     - name: SonarQube analysis
-      uses: sonarsource/sonarcloud-github-action@master
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Pcoverage
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
