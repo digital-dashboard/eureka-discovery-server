@@ -33,6 +33,6 @@ jobs:
       run: mvn clean install
 
     - name: SonarQube analysis
-      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Pcoverage
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=j11a_eureka
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
