@@ -24,6 +24,9 @@
         <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
         <sonar.jacoco.reportPaths>${project.build.directory}/target/surefire-reports</sonar.jacoco.reportPaths>
         <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.coverage.exclusions>
+            src/main/java/com/j11a/dashboard/eurekadiscoveryserver/EurekaDiscoveryServerApplication.java
+        </sonar.coverage.exclusions>
         <sonar.language>java</sonar.language>
     </properties>
     <dependencies>
@@ -56,6 +59,7 @@
     </dependencyManagement>
 
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
