@@ -34,6 +34,6 @@ jobs:
       run: mvn clean install
 
     - name: SonarQube analysis
-      run: mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=j11a-digital-dashboard_discover-server
+      run: mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
