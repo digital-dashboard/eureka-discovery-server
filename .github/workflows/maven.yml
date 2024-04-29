@@ -11,8 +11,6 @@ name: Java CI with Maven
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
@@ -33,3 +31,8 @@ jobs:
 
     - name: Run Tests
       run: mvn clean install
+
+    - name: SonarQube analysis
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
