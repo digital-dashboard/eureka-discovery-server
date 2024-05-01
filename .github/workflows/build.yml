@@ -53,4 +53,6 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/eureka-discovery-server:latest
+        tags: |
+          ${{ secrets.DOCKERHUB_USERNAME }}/eureka-discovery-server:latest
+          ${{ secrets.DOCKERHUB_USERNAME }}/eureka-discovery-server:${{ github.run.number }}
